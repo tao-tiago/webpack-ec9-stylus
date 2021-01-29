@@ -1,0 +1,26 @@
+$colors = { name: 'blue', colors: $blue }, { name: 'black', colors: $black }
+
+for $color in $colors
+  for $c, $index in $color[colors]
+    .color-{$color[name]}-{$index + 1}
+      color: $c;
+    .bg-{$color[name]}-{$index + 1}
+      background-color: $c;
+
+.color-primary
+  color: $color-primary;
+.color-secondary
+  color: $color-secondary;
+.color-red
+  color: $color-red;
+.color-white
+  color: $color-white;
+
+.bg-primary
+  background-color: $color-primary;
+.bg-secondary
+  background-color: $color-secondary;
+.bg-red
+  background-color: $color-red;
+.bg-white
+  background-color: $color-white;

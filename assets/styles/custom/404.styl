@@ -1,0 +1,20 @@
+.custom-header-404
+  background-color: #38daf9;
+  background-position: center bottom;
+  position: relative;
+  padding-bottom: 96px;
+  &:before
+    content: '404';
+    display: block;
+    color: rgba(0, 0, 0, 0.1);
+    @extends .font-krub
+    font-weight: bold;
+    transform: translateY(0.35em);
+    font-size: 12em;
+
++above('sm')
+  .custom-header-404
+    background-position: center center; 
+    &:before
+      transform: translateY(0.25em);
+      font-size: 18em;

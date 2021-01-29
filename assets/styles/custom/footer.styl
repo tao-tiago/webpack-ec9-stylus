@@ -1,0 +1,47 @@
+.custom-footer
+  text-align: center;
+  color: white;
+  .social
+    margin: 0 auto 24px;
+    .brand
+      margin-bottom: 16px;
+    ul
+      display: inline-flex;
+      li
+        margin: 4px;
+  .custom-footer-menu
+    margin: 0 auto 32px;
+    max-width: 230px;
+    > strong
+      @extend .font-krub
+      margin-bottom: 8px;
+      display: block;
+    ul
+      li
+        > a
+          display: block;
+          padding: 4px 0px;
+          text-decoration: none;
+          color: white;
+          &:hover
+            text-decoration: underline;
+  > form
+    display: none;
+
++above('md')
+  .custom-footer
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    .social
+      ul li
+        transition: transform ease 0.15s;
+        &:hover
+          transform: scale(1.2);
+    .custom-footer-menu
+      margin: 0 14px 32px;
+
++above('lg')
+  .custom-footer
+    > form
+      display: block;

@@ -1,0 +1,86 @@
+body
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  font-size: 14px;
+  line-height: 1.5em;
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+
+p
+  margin-top: 0.5em;
+  margin-bottom: 0.5em
+
+.display, .font-krub
+  font-family: 'Krub', sans-serif;
+
+.text-left, .left
+  text-align: left;
+.text-right, .right
+  text-align: right;
+.text-center, .center
+  text-align: center;
+.below-center
+  text-align: center;
+  +above('md')
+    text-align: left;
+    &.text-right, 
+    &.right
+      text-align: right;
+.vertical-center
+  vertical-align: middle;
+.vertical-top
+  vertical-align: top;
+
+.strong, strong
+  font-weight: bold;
+.italic
+  font-style: italic;
+.uppercase
+  text-transform: uppercase;
+.underline-none
+  text-decoration: none;
+.underline-hover
+  text-decoration: none;
+  &:hover
+    text-decoration: underline;
+.no-wrap
+  white-space: nowrap;
+
+.line-height-1x, .lh-1x 
+  line-height: 1.15em;
+.line-height-2x, .lh-2x 
+  line-height: 1.25em;
+.line-height-3x, .lh-3x 
+  line-height: 1.40em;
+.line-height-4x, .lh-4x 
+  line-height: 1.60em;
+.line-height-5x, .lh-5x 
+  line-height: 1.80em;
+
+.fs-5x, .font-size-5x
+  font-size: 32px
+  +above('md')
+    font-size: 48px;
+.fs-4x, .font-size-4x
+  font-size: 28px
+  +above('md')
+    font-size: 30px;
+.fs-3x, .font-size-3x
+  font-size: 16px
+  +above('md')
+    font-size: 20px;
+.fs-2x, .font-size-2x
+  font-size: 14px
+  +above('md')
+    font-size: 18px;
+.fs-1x, .font-size-1x
+  font-size: 13px
+  +above('md')
+    font-size: 16px;
+
+.fs-small
+  font-size: 11px
+  +above('md')
+    font-size: 13px;

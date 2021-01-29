@@ -1,0 +1,24 @@
+.custom-banner-link
+  background-color: $color-primary;
+
+.custom-course-card
+  display: flex;
+  > *:not(.custom-course-card-footer)
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+.custom-course-card-footer
+  @extends .font-krub
+  font-weight: bold;
+  color: white;
+  background-color: $color-primary;
+  padding: 16px 8px;
+  display: flex;
+  justify-content: space-between;
+  img
+    display: none;
+  +above('md')
+    padding: 16px 24px;
+    img
+      display: inherit;
+  

@@ -1,0 +1,13 @@
+.custom-newsletter
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  input:first-child
+    flex-grow: 1;
+  +above('sm')
+    flex-direction: row;
+    justify-content: flex-end;
+  +above('md')
+    input:first-child
+      max-width: 250px;
+      

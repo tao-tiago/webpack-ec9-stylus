@@ -1,0 +1,84 @@
+.custom-contact
+  max-width: 100%;
+  width: 800px;
+  margin: 0 auto;
+
+.custom-contact-content
+  padding: 16px 8px;
+  +above(350px)
+    padding: 16px;
+
+.custom-contact-form
+  input:not(.custom-contact-form-button),
+  textarea
+    color: white;
+    background: transparent;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    padding: 8px 0;
+    margin: 16px 0;
+    font-family: 'Open Sans', sans-serif;
+    &::placeholder
+      color: rgba(255, 255, 255, 0.8);
+
+.custom-contact-form-button
+  margin-left: auto;
+  display: block;
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  border-radius: 4px;
+  line-height: 32px;
+  padding: 0 12px;
+
+.custom-contact-tabs-wrapper
+  *[data-tabs-header]
+    min-width: 100px;
+
+.custom-contact-tabs
+  background-color: #e5e6e8;
+  
+.collapse
+  margin: auto;
+  max-width: 100%;
+  width: 800px;
+  > *:first-child
+    @extends .h6
+    background-color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    position: relative;
+    cursor: pointer;
+    &:after
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      height: 24px;
+      width: 24px;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%230d346b' d='M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z' /%3E%3C/svg%3E");
+      @extends .bg-image-contain;
+      transform-origin: center;
+      transition: transform ease 0.3s;
+      transform: translateY(-50%) rotate(45deg);
+  > *:last-child
+    @extends .fs-1x
+    padding-left: 24px;
+    &:last-child
+      margin-bottom: 24px;
+      transition: all ease 0.3s;
+      min-height: 48px;
+      max-height: 1000px;
+  &.close
+    > *:first-child
+      &:after
+        transform: translateY(-50%) rotate(0deg);
+    > *:last-child
+      opacity: 0;
+      min-height: 0;
+      max-height: 0;
+

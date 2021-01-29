@@ -1,0 +1,25 @@
+$margin-classes-responsive-names = 'm' 'mt' 'mr' 'mb' 'ml' 'mx' 'my'
+
+// generate
+for $size in $values-sizes
+  for $m, $index in $margin-classes-responsive-names
+    .{$m}-{$size}px
+      for $part in $attributes-responsive-parts[$index]
+        margin{$part}: unit($size, px)
+
+.mx-auto
+  margin-left: auto
+  margin-right: auto
+
+// responsives
+for $num in (0..2)
+  for $m, $index in $margin-classes-responsive-names
+    .{$m}-{$num + 1}x
+      for $part in $attributes-responsive-parts[$index]
+        margin{$part}: unit($values-reponsive-sizes['xs'][$num], px)
+      +above('md')
+        for $part in $attributes-responsive-parts[$index]
+          margin{$part}: unit($values-reponsive-sizes['md'][$num], px)
+      +above('lg')
+        for $part in $attributes-responsive-parts[$index]
+          margin{$part}: unit($values-reponsive-sizes['lg'][$num], px)

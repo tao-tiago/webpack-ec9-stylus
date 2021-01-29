@@ -1,0 +1,36 @@
+$chevron-dow = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%230D346B' d='M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z' /%3E%3C/svg%3E"
+
+.custom-filter-select
+  display: inline;
+  position: relative;
+  select
+    display: inline;
+    color: $color-primary;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    border-bottom: 1px solid $color-primary;
+    @extend .fs-4x
+    text-align-last: center;
+    -moz-text-align-last: center;
+    margin: 0 16px;
+    padding-left: 4px;
+    padding-right: 32px;
+    white-space: wrap;
+    width: 200px;
+    cursor: pointer;
+    background: transparent url($chevron-dow) no-repeat center right;
+    transition: all ease 0.3s;
+    &:focus
+      boder: none;
+      outline: none;
+      width: 400px;
+      max-width: 100%;
+    option
+      border: 0;
+      @extend .fs-2x
+      text-align: center;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;

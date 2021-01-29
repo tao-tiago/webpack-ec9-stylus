@@ -1,0 +1,40 @@
+$padding-classes-responsive-names = 'p' 'pt' 'pr' 'pb' 'pl' 'px' 'py'
+
+// responsive
+.p-auto, .section
+  padding: 24px;
+  +above('md')
+    padding: 40px 24px;
+  +above('xl')
+    padding: 64px calc(50vw - 580px);
+
+.pt-auto
+  padding-top: 24px;
+  +above('md')
+    padding-top: 40px;
+  +above('xl')
+    padding-top: 64px;
+
+.px-auto
+  padding-left: 24px;
+  padding-right: 24px;
+  +above('xl')
+    padding-left: calc(50vw - 580px);
+    padding-right: calc(50vw - 580px);
+
+.py-auto
+  padding-top: 24px;
+  padding-bottom: 24px;
+  +above('md')
+    padding-top: 40px;
+    padding-bottom: 40px;
+  +above('xl')
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+// generate
+for $size in $values-sizes
+  for $p, $index in $padding-classes-responsive-names
+    .{$p}-{$size}px
+      for $part in $attributes-responsive-parts[$index]
+        padding{$part}: unit($size, px)

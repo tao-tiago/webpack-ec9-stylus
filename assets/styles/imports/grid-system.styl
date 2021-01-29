@@ -1,0 +1,142 @@
+.block
+  display: block;
+.inline-block
+  display: inline-block;
+
++below('sm')
+  .hide-below-sm
+    display: none;
++below('md')
+  .hide-below-md
+    display: none;
+
+.w-full
+  min-width: 100vw;
+.w-100
+  width: 100%;
+.w-80
+  width: 80%;
+.w-60
+  width: 60%;
+.w-50
+  width: 50%;
+.w-40
+  width: 40%;
+.w-30
+  width: calc(100% / 3);
+.w-25
+  width: 25%;
+
+// reponsives
+.row
+  .w-80,
+  .w-60,
+  .w-50,
+  .w-40,
+  .w-30,
+  .w-25
+    width: 100%;
+
+.row,
+.above-row
+  +above('md')
+    display: flex;
+    .w-100
+      width: 100%;
+    .w-80
+      width: 80%;
+    .w-60
+      width: 60%;
+    .w-50
+      width: 50%;
+    .w-40
+      width: 40%;
+    .w-30
+      width: calc(100% / 3);
+    .w-25
+      width: 25%;
+
+.grid
+  &.grid-2,
+  &.grid-4
+    > *
+      margin-bottom: 16px;
+  &.grid-632
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+  +above('md')
+    display: grid;
+    grid-gap: 24px;
+    &.grid-2
+      grid-template-columns: repeat(2, 1fr);
+      > *
+        margin-bottom: inherit;
+    &.grid-3
+      grid-template-columns: repeat(3, 1fr);
+    &.grid-4
+      grid-template-columns: repeat(4, 1fr);
+      > *
+        margin-bottom: inherit;
+    &.grid-632
+      grid-template-columns: repeat(3, 1fr);
+  +above('xl')
+    &.grid-632
+      grid-template-columns: repeat(6, 1fr);
+ 
+.slider-columns
+  display: flex;
+  justify-content: space-between;
+
++below('md')
+  .slider-wrapper
+    overflow-y: hidden;
+    overflow-x: auto;
+    max-width: 100vw;
+    margin-left: -8px;
+    margin-right: -8px; 
+  .p-auto, .section, .px-auto
+    .slider-wrapper
+      margin-left: -24px;
+      margin-right: -24px;
+  .slider-columns
+    > *
+      padding-left: 8px;
+      padding-right: 8px;
+    &:after,
+    &:before
+      content: '';
+      display: block;
+      min-width: 16px;
+    > *
+      padding-left: 12px;
+      padding-right: 12px;
+      flex-grow: 1;
+      min-width: 280px;
+      max-width: calc(100% / 3);
+    &.slider-columns-auto
+      > *
+        min-width: 100px;
+    &.slider-columns-2
+      > *
+        max-width: 50%;
+    &.slider-columns-4
+      > *
+        max-width: 25%;
+    
++above('lg')
+  .slider-columns
+    display: grid;
+    grid-gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    &.slider-columns-auto
+      display: flex;
+      justify-content: center;
+      > *
+        padding-left: 8px;
+        padding-right: 8px;
+    &.slider-columns-2
+      grid-template-columns: repeat(2, 1fr);
+    &.slider-columns-4
+      grid-template-columns: repeat(4, 1fr);
+

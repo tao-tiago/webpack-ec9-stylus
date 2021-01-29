@@ -1,0 +1,35 @@
+{
+  "name": "starter",
+  "description": "Optimize front of an application.",
+  "version": "2.0.0",
+  "title": "Webpack",
+  "main": "app.min.js",
+  "author": {
+    "name": "Tiago Pires",
+    "email": "tiago.pires@bindigital.com.br"
+  },
+  "scripts": {
+    "prod:js": "webpack --mode=development -w",
+    "prod:css": "npx stylus -u rupture -o build/styles/style.min.css -w assets/styles/index.styl -c",
+    "build:img": "imagemin /assets/img/* --out-dir=/build/img",
+    "build:js": "webpack --mode=production",
+    "build:css": "npx stylus -u rupture -o build/styles/style.min.css assets/styles/index.styl -c"
+  },
+  "dependencies": {
+    "string-mask": "^0.3.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
+    "@babel/plugin-transform-async-to-generator": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.7",
+    "babel-loader": "^8.0.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "rupture": "^0.7.1",
+    "stylus": "^0.54.7",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10"
+  }
+}

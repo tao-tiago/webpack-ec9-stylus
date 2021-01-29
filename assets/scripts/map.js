@@ -1,0 +1,1 @@
+const petsAge = pets.map(({age}) => age * 2 )
